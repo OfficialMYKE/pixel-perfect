@@ -179,7 +179,7 @@ function Guestbook() {
       </form>
       <div className="mt-4 flex flex-wrap gap-3">
         {notes.map((n, i) => (
-          <div key={i} className="bg-cream p-3 shadow-md font-script text-xl max-w-[48%]" style={{ transform: `rotate(${rots[i % rots.length] / 2}deg)` }}>
+          <div key={i} className="bg-cream p-3 shadow-md font-script text-xl max-w-[48%]" style={{ transform: `rotate(${(rots[i % rots.length] ?? 0) / 2}deg)` }}>
             "{n.msg}" <span className="block text-right text-base text-forest">— {n.name}</span>
           </div>
         ))}
