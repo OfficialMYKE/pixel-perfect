@@ -1,8 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import portrait from "@/assets/portrait.jpg";
-import balloondog from "@/assets/balloondog.png";
-import disco from "@/assets/disco.png";
+import cdisco from "@/assets/stk/cdisco.png";
+import chheart from "@/assets/stk/chheart.png";
+import chstar from "@/assets/stk/chstar.png";
+import gdisco from "@/assets/stk/gdisco.png";
+import gdog from "@/assets/stk/gdog.png";
+import gfoil from "@/assets/stk/gfoil.png";
+import gglitter from "@/assets/stk/gglitter.png";
+import ghearts from "@/assets/stk/ghearts.png";
+import gstar from "@/assets/stk/gstar.png";
+import hat from "@/assets/stk/hat.png";
+import kiss from "@/assets/stk/kiss.png";
+import sparkle from "@/assets/stk/sparkle.png";
+import sstar from "@/assets/stk/sstar.png";
+import sstars from "@/assets/stk/sstars.png";
 import mermaid from "@/assets/mermaid.png";
 
 export const Route = createFileRoute("/")({
@@ -35,72 +47,11 @@ const MAP_IGLESIA = "https://www.google.com/maps/search/?api=1&query=Iglesia+de+
 const MAP_NOGAL = "https://www.google.com/maps/search/?api=1&query=Propiedad+del+Nogal+Perucho";
 const WA = `https://wa.me/?text=${encodeURIComponent("¡Hola Camila! Confirmo mi asistencia a tus 18 🎉")}`;
 
-function Star({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={`sticker ${className}`} aria-hidden>
-      <path d="M12 1l2.9 7.1L22 9l-5.5 4.8L18.2 21 12 17.3 5.8 21l1.7-7.2L2 9l7.1-.9z" fill="var(--mint-deep)" stroke="var(--forest)" strokeWidth=".8" />
-    </svg>
-  );
-}
 
-function Hibiscus({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" className={`sticker ${className}`} aria-hidden>
-      {[0, 72, 144, 216, 288].map((a) => (
-        <ellipse key={a} cx="50" cy="28" rx="18" ry="24" fill="var(--mint-deep)" transform={`rotate(${a} 50 50)`} />
-      ))}
-      <circle cx="50" cy="50" r="9" fill="var(--forest)" />
-      <circle cx="50" cy="50" r="3" fill="var(--cream)" />
-    </svg>
-  );
-}
 
-function Kiss({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 60" className={`sticker ${className}`} aria-hidden>
-      <path d="M5 30 Q25 2 50 20 Q75 2 95 30 Q75 30 50 32 Q25 30 5 30Z" fill="oklch(0.55 0 0)" />
-      <path d="M5 32 Q50 34 95 32 Q75 58 50 56 Q25 58 5 32Z" fill="oklch(0.45 0 0)" />
-    </svg>
-  );
-}
 
-function Cake({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" className={`sticker ${className}`} aria-hidden fill="none" stroke="var(--ink)" strokeWidth="2.5" strokeLinecap="round">
-      <rect x="15" y="50" width="70" height="38" rx="4" fill="var(--cream)" />
-      <path d="M15 62 q9 8 17 0 q9 8 18 0 q9 8 17 0 q9 8 18 0" />
-      <rect x="25" y="34" width="50" height="16" rx="3" fill="var(--paper)" />
-      <path d="M50 34 v-12" /><path d="M50 22 q-4 -6 0 -10 q4 4 0 10" fill="var(--mint)" />
-      <path d="M50 70 l-14 -8 v16z M50 70 l14 -8 v16z" fill="var(--mint-deep)" stroke="var(--forest)" />
-    </svg>
-  );
-}
 
-function Cocktail({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" className={`sticker ${className}`} aria-hidden stroke="var(--ink)" strokeWidth="2.5" strokeLinecap="round">
-      <path d="M15 15 h70 l-35 40z" fill="var(--silver)" />
-      <path d="M50 55 v30 M32 88 h36" fill="none" />
-      <circle cx="68" cy="22" r="6" fill="var(--mint)" />
-      <path d="M50 60 l-14 -8 v16z M50 60 l14 -8 v16z" fill="var(--forest)" />
-    </svg>
-  );
-}
 
-function PartyHat({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 120" className={`sticker ${className}`} aria-hidden>
-      <defs>
-        <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="7" cy="7" r="3" fill="var(--paper)" />
-        </pattern>
-      </defs>
-      <path d="M50 8 L90 108 Q50 120 10 108Z" fill="var(--mint)" />
-      <path d="M50 8 L90 108 Q50 120 10 108Z" fill="url(#dots)" />
-      <circle cx="50" cy="8" r="9" fill="var(--mint-deep)" />
-    </svg>
-  );
-}
 
 function Calendar({ className = "" }: { className?: string }) {
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
@@ -122,6 +73,33 @@ function Calendar({ className = "" }: { className?: string }) {
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+function S({ src, c, r, float, pulse }: { src: string; c: string; r: number; float?: boolean; pulse?: boolean }) {
+  return (
+    <img src={src} alt="" loading="lazy" className={`sticker absolute ${c} ${float ? "animate-float" : ""} ${pulse ? "animate-pulse" : ""}`} style={{ ["--r" as string]: `${r}deg`, transform: `rotate(${r}deg)` }} />
+  );
+}
+
+const ransomStyles = [
+  "bg-forest text-paper font-serif",
+  "bg-paper text-ink font-type",
+  "bg-cream text-ink font-bold",
+  "bg-silver text-ink font-serif",
+  "bg-ink text-paper font-type",
+  "bg-mint text-forest font-bold",
+  "bg-paper text-forest font-serif",
+];
+function Ransom({ text, offset, size, tilt }: { text: string; offset: number; size: string; tilt: number }) {
+  return (
+    <div className="flex gap-[3px]" style={{ transform: `rotate(${tilt}deg)` }}>
+      {text.split("").map((ch, i) =>
+        ch === " " ? <span key={i} className="w-3" /> : (
+          <span key={i} className={`${ransomStyles[(i + offset) % ransomStyles.length]} ${size} px-1.5 py-0.5 shadow-md`} style={{ transform: `rotate(${rots[(i + offset) % rots.length]}deg) translateY(${(i % 3) - 1}px)` }}>{ch}</span>
+        ),
+      )}
     </div>
   );
 }
@@ -195,24 +173,34 @@ function Index() {
 
       {/* Decorations */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <img src={balloondog} alt="" width={816} height={816} className="sticker absolute top-6 -left-6 w-32 animate-float" style={{ ["--r" as string]: "-12deg" }} />
-        <Star className="absolute top-40 left-4 w-8 animate-pulse" />
-        <Star className="absolute top-52 left-14 w-5 animate-pulse" />
-        <img src={disco} alt="" width={816} height={816} className="sticker absolute top-24 -right-4 w-28 animate-float" style={{ ["--r" as string]: "8deg" }} />
-        <Hibiscus className="absolute top-52 right-2 w-20 rotate-12" />
-        <Kiss className="absolute top-[900px] -left-2 w-24 -rotate-[20deg]" />
-        <img src={mermaid} alt="" width={816} height={816} loading="lazy" className="sticker absolute top-[1150px] -right-6 w-28 animate-float" style={{ ["--r" as string]: "15deg" }} />
-        <Cake className="absolute bottom-[620px] -left-2 w-24 rotate-[-8deg]" />
-        <Cocktail className="absolute bottom-[560px] right-0 w-24 rotate-[10deg] animate-float" />
-        <Star className="absolute bottom-[480px] right-20 w-6 animate-pulse" />
+        <S src={gdog} c="top-4 -left-4 w-28" r={-10} float />
+        <S src={sstar} c="top-36 left-3 w-10" r={15} pulse />
+        <S src={gglitter} c="top-48 left-14 w-9" r={-8} pulse />
+        <S src={cdisco} c="top-20 -right-5 w-28" r={8} float />
+        <S src={sparkle} c="top-56 right-1 w-16" r={0} pulse />
+        <S src={gfoil} c="top-[520px] -left-5 w-20" r={-14} float />
+        <S src={chheart} c="top-[560px] -right-6 w-24" r={12} float />
+        <S src={kiss} c="top-[900px] -left-4 w-28" r={-18} />
+        <S src={chstar} c="top-[1010px] -right-4 w-24" r={18} float />
+        <S src={mermaid} c="top-[1240px] -right-6 w-24" r={15} float />
+        <S src={gdisco} c="top-[1330px] -left-6 w-36" r={-6} float />
+        <S src={gstar} c="top-[1500px] right-2 w-16" r={10} pulse />
+        <S src={ghearts} c="bottom-[640px] -left-6 w-32" r={-8} float />
+        <S src={sstars} c="bottom-[560px] -right-8 w-36" r={10} float />
+        <S src={sstar} c="bottom-[420px] right-24 w-8" r={-20} pulse />
+        <S src={gglitter} c="bottom-40 -left-2 w-12" r={20} pulse />
       </div>
 
       <div className="relative z-10 mx-auto max-w-md px-4 pt-14">
         {/* Hero */}
-        <h1 className="metallic font-bold text-5xl leading-none text-center rotate-[-4deg]">IT'S MY<br />BIRTHDAY</h1>
+        <h1 className="sr-only">It's my birthday</h1>
+        <div aria-hidden className="flex flex-col items-center gap-2">
+          <Ransom text="IT'S MY" offset={3} size="text-3xl" tilt={-4} />
+          <Ransom text="BIRTHDAY" offset={0} size="text-4xl" tilt={2} />
+        </div>
 
         <div className="relative mx-auto mt-16 w-[78%] rotate-[3deg]">
-          <PartyHat className="absolute -top-14 left-[34%] w-20 z-20 rotate-[-18deg]" />
+          <img src={hat} alt="" className="sticker absolute -top-20 left-[30%] w-24 z-20 rotate-[-16deg]" />
           <div className="bg-paper p-3 pb-14 shadow-2xl">
             <img src={portrait} alt="Camila Arias" width={768} height={960} className="w-full grayscale contrast-125" />
           </div>
