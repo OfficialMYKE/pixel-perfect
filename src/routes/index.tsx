@@ -211,16 +211,16 @@ function Index() {
         {/* Hero */}
         <h1 className="metallic font-bold text-5xl leading-none text-center rotate-[-4deg]">IT'S MY<br />BIRTHDAY</h1>
 
-        <div className="relative mx-auto mt-10 w-[78%] rotate-[3deg]">
-          <PartyHat className="absolute -top-20 left-[30%] w-24 z-20 rotate-[-18deg]" />
+        <div className="relative mx-auto mt-16 w-[78%] rotate-[3deg]">
+          <PartyHat className="absolute -top-14 left-[34%] w-20 z-20 rotate-[-18deg]" />
           <div className="bg-paper p-3 pb-14 shadow-2xl">
             <img src={portrait} alt="Camila Arias" width={768} height={960} className="w-full grayscale contrast-125" />
           </div>
           <span className="tape tape-grey -top-2 -right-6 rotate-[35deg]" />
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[120%] flex flex-wrap justify-center gap-1 rotate-[-3deg] z-20">
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[125%] flex flex-nowrap justify-center gap-[3px] rotate-[-3deg] z-20">
             {NAME.split("").map((ch, i) =>
               ch === " " ? <span key={i} className="w-3" /> : (
-                <span key={i} className={`${letterStyles[i % letterStyles.length]} px-1.5 py-0.5 text-2xl shadow-md`} style={{ transform: `rotate(${rots[i]}deg)` }}>
+                <span key={i} className={`${letterStyles[i % letterStyles.length]} px-1 py-0.5 text-xl shadow-md`} style={{ transform: `rotate(${rots[i]}deg)` }}>
                   {ch}
                 </span>
               ),
