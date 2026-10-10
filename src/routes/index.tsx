@@ -79,18 +79,18 @@ function Calendar({ className = "" }: { className?: string }) {
 
 function S({ src, c, r, float, pulse }: { src: string; c: string; r: number; float?: boolean; pulse?: boolean }) {
   return (
-    <img src={src} alt="" loading="lazy" className={`sticker absolute ${c} ${float ? "animate-float" : ""} ${pulse ? "animate-pulse" : ""}`} style={{ ["--r" as string]: `${r}deg`, transform: `rotate(${r}deg)` }} />
+    <img src={src} alt="" className={`sticker absolute ${c} ${float ? "animate-float" : ""} ${pulse ? "animate-pulse" : ""}`} style={{ ["--r" as string]: `${r}deg`, transform: `rotate(${r}deg)` }} />
   );
 }
 
 const ransomStyles = [
   "bg-forest text-paper font-serif",
-  "bg-paper text-ink font-type",
+  "bg-cream text-ink font-type border border-silver",
   "bg-cream text-ink font-bold",
   "bg-silver text-ink font-serif",
   "bg-ink text-paper font-type",
   "bg-mint text-forest font-bold",
-  "bg-paper text-forest font-serif",
+  "bg-paper text-forest font-serif border border-silver",
 ];
 function Ransom({ text, offset, size, tilt }: { text: string; offset: number; size: string; tilt: number }) {
   return (
@@ -173,11 +173,11 @@ function Index() {
 
       {/* Decorations */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <S src={gdog} c="top-4 -left-4 w-28" r={-10} float />
-        <S src={sstar} c="top-36 left-3 w-10" r={15} pulse />
-        <S src={gglitter} c="top-48 left-14 w-9" r={-8} pulse />
-        <S src={cdisco} c="top-20 -right-5 w-28" r={8} float />
-        <S src={sparkle} c="top-56 right-1 w-16" r={0} pulse />
+        <S src={gdog} c="top-2 -left-6 w-24" r={-10} float />
+        <S src={sstar} c="top-44 left-2 w-10" r={15} pulse />
+        <S src={gglitter} c="top-[300px] left-4 w-9" r={-8} pulse />
+        <S src={cdisco} c="top-48 -right-6 w-24" r={8} float />
+        <S src={sparkle} c="top-[340px] right-1 w-14" r={0} pulse />
         <S src={gfoil} c="top-[520px] -left-5 w-20" r={-14} float />
         <S src={chheart} c="top-[560px] -right-6 w-24" r={12} float />
         <S src={kiss} c="top-[900px] -left-4 w-28" r={-18} />
@@ -191,15 +191,15 @@ function Index() {
         <S src={gglitter} c="bottom-40 -left-2 w-12" r={20} pulse />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-md px-4 pt-14">
+      <div className="relative z-10 mx-auto max-w-md px-4 pt-24">
         {/* Hero */}
         <h1 className="sr-only">It's my birthday</h1>
         <div aria-hidden className="flex flex-col items-center gap-2">
-          <Ransom text="IT'S MY" offset={3} size="text-3xl" tilt={-4} />
-          <Ransom text="BIRTHDAY" offset={0} size="text-4xl" tilt={2} />
+          <Ransom text="IT'S MY" offset={3} size="text-[2.2rem]" tilt={-4} />
+          <Ransom text="BIRTHDAY" offset={0} size="text-[2.6rem]" tilt={2} />
         </div>
 
-        <div className="relative mx-auto mt-16 w-[78%] rotate-[3deg]">
+        <div className="relative mx-auto mt-24 w-[78%] rotate-[3deg]">
           <img src={hat} alt="" className="sticker absolute -top-20 left-[30%] w-24 z-20 rotate-[-16deg]" />
           <div className="bg-paper p-3 pb-14 shadow-2xl">
             <img src={portrait} alt="Camila Arias" width={768} height={960} className="w-full grayscale contrast-125" />
