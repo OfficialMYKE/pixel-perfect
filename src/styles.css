@@ -154,6 +154,16 @@
   --whatsapp: oklch(0.76 0.19 150);
   --tape: color-mix(in oklab, var(--mint) 55%, transparent);
   --tape-grey: color-mix(in oklab, var(--silver) 60%, transparent);
+  --mint-glow: oklch(0.92 0.08 155);
+  --gradient-page: radial-gradient(60rem 40rem at 85% -5%, color-mix(in oklab, var(--mint) 30%, transparent), transparent 60%),
+    radial-gradient(50rem 36rem at -10% 30%, color-mix(in oklab, var(--cream) 80%, transparent), transparent 65%),
+    radial-gradient(46rem 40rem at 110% 75%, color-mix(in oklab, var(--silver) 35%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--paper), oklch(0.97 0.015 120) 55%, var(--paper));
+  --gradient-balloon: linear-gradient(160deg, var(--mint-glow), var(--mint) 40%, var(--mint-deep) 85%, var(--forest));
+  --gradient-chrome: linear-gradient(180deg, oklch(0.97 0 0), var(--silver) 45%, oklch(0.92 0 0) 55%, oklch(0.6 0.005 260));
+  --shadow-polaroid: 0 1px 2px rgb(0 0 0 / .12), 0 12px 28px -8px rgb(0 0 0 / .35), 0 30px 60px -20px color-mix(in oklab, var(--forest) 35%, transparent);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / .1), 0 10px 24px -10px rgb(0 0 0 / .3);
+  --shadow-sticker: drop-shadow(0 0 0 white) drop-shadow(3px 0 0 white) drop-shadow(-3px 0 0 white) drop-shadow(0 3px 0 white) drop-shadow(0 -3px 0 white) drop-shadow(4px 10px 10px rgb(0 0 0 / .32));
 }
 @theme inline {
   --color-paper: var(--paper);
@@ -164,12 +174,14 @@
   --color-forest: var(--forest);
   --color-silver: var(--silver);
   --color-whatsapp: var(--whatsapp);
+  --color-mint-glow: var(--mint-glow);
   --font-bold: "Archivo Black", sans-serif;
   --font-script: "Caveat", cursive;
   --font-groovy: "Monoton", cursive;
   --font-type: "Special Elite", monospace;
   --font-serif: "Abril Fatface", serif;
   --animate-float: float 4s ease-in-out infinite;
+  --animate-shimmer: shimmer 3.5s ease-in-out infinite;
 }
 @keyframes float { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-10px) rotate(var(--r,0deg)); } }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
